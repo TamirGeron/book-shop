@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Bookshop</title>
+</head>
+
+<body onload="onInit()">
+
+    <header>
+        <h1>Welcome to my bookshop</h1>
+    </header>
+
+
+
+    <section>
+        <form onsubmit="onAddBook(event)">
+            <input class="login-input" type="text" name="bookName" autocomplete="off" placeholder="Enter Book Name">
+            <input class="login-input" type="number" name="price" autocomplete="off" placeholder="Enter Price">
+            <button>Create new book</button>
+    </section>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <!-- <th>Picture</th> -->
+            <th colspan="3">Actions</th>
+        </thead>
+        <tbody class="books-container">
+        </tbody>
+    </table>
+
+    <div class="modal">
+        <h2></h2>
+        <h3></h3>
+        <h4>Price - <span></span> </h4>
+        <h5>Book Description</h5>
+        <p></p>
+        <section>
+            <button onclick="onRate(-1)">−</button>
+            <input type="number" min="0" max="10" value="0" class="input" />
+            <button onclick="onRate(1)">+</button>
+        </section>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+
+    <div class="user-msg"></div>
+
+    <script src="js/service/util.service.js"></script>
+    <script src="js/bookController.js"></script>
+    <script src="js/service/book.service.js"></script>
+    <script src="js/service/storage.service.js"></script>
+</body>
+
+</html>
